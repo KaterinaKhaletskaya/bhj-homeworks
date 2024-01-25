@@ -7,6 +7,7 @@ addTimer = function(){
         timer.textContent = parseInt(timer.textContent) - 1;}
     else {
           alert("Вы победили в конкурсе!");  
-        }
+          clearInterval(timerInterval);
+    }
 }
-setInterval(addTimer, 1000);
+let timerInterval = setInterval(addTimer, 1000);
