@@ -23,7 +23,7 @@ for (holeIndex = 1; holeIndex < 9; holeIndex++) {
 			counterLost = 0;
 
 			dead.textContent = counterDead;
-			lost.textConten = counterLost;
+			lost.textContent = counterLost;
 		}
 
 		if (counterLost == 5) {
@@ -33,7 +33,7 @@ for (holeIndex = 1; holeIndex < 9; holeIndex++) {
 			counterLost = 0;
 
 			dead.textContent = counterDead;
-			lost.textConten = counterLost;
+			lost.textContent = counterLost;
 		}
 	}
 
