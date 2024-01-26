@@ -5,7 +5,7 @@ let counterDead = 0;
 let counterLost = 0;
 
 const getHole = index => document.getElementById(`hole${index}`);
-for (holeIndex = 1; holeIndex < 9; holeIndex++) {
+for (holeIndex = 1; holeIndex < 10; holeIndex++) {
 	const hole = getHole(holeIndex);
 
 	hole.onclick = function() {
