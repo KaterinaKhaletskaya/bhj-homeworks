@@ -4,6 +4,7 @@ class Game {
     this.wordElement = container.querySelector('.word');
     this.winsElement = container.querySelector('.status__wins');
     this.lossElement = container.querySelector('.status__loss');
+    this.currentSymbol = container.querySelector('.symbol_correct');
 
     this.reset();
 
@@ -17,14 +18,16 @@ class Game {
   }
 
   registerEvents() {
-    /*
-      TODO:
-      Написать обработчик события, который откликается
-      на каждый введённый символ.
-      В случае правильного ввода символа вызываем this.success()
-      При неправильном вводе символа - this.fail();
-      DOM-элемент текущего символа находится в свойстве this.currentSymbol.
-     */
+
+  	document.addEventListener('keyup', (event) => {
+  		if (event.key === this.currentSymbol.innerHTML) {
+  			this.success()
+  		} else {
+  			this.fail();
+  		}
+
+  	});
+
   }
 
   success() {
