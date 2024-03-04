@@ -1,24 +1,11 @@
-setInterval(play, 1000);
+const rotatorCase = document.querySelectorAll('.rotator__case');
+let index = 0;
 
-
-function play(){
-    const rotatorCase = document.querySelectorAll('.rotator__case');
-    const rotatorCaseActive = document.querySelectorAll('.rotator__case.rotator__case_active');
-
-
-    for(let i = 0; i < rotatorCase.length; i++){
-   rotatorCase[i].classList.toggle('rotator__case_active');
-
-}
-}
-
-
-    // for(let i = 0; i < rotatorCase.length; i++){
-    //     if (rotatorCaseActive[i]){
-    //         rotatorCase[i].classList.remove('rotator__case_active');
-    //     } else {
-    //         rotatorCase[i].classList.add('rotator__case_active');
-    //     }
-    // }
-
-
+setInterval(() => {
+	rotatorCase[index].classList.remove('rotator__case_active');
+	index++;
+	if (index === rotatorCase.length) {
+		index = 0;
+	}
+	rotatorCase[index].classList.add('rotator__case_active');
+}, 1000);
