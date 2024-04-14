@@ -23,7 +23,7 @@ for (let dec of controlDec) {
 }
 const productAdd = Array.from(document.querySelectorAll('.product__add'));
 const cart = document.querySelector('.cart__products');
-const cartProducts = Array.from(document.querySelectorAll('.cart__product'));
+
 const products = Array.from(document.querySelectorAll('.product'));
 
 
@@ -31,22 +31,19 @@ for (let add of productAdd) {
 	let index = productAdd.indexOf(add);
 	add.addEventListener('click', () => {
 
-		function getElem() {
+		const cartProducts = Array.from(document.querySelectorAll('.cart__product'));
 
-			for (let elem = 0; elem < cartProducts.length; elem++) {
-				if (cartProducts[elem].dataset.id != products[index].dataset.id) {
-					return true;
-				} else {
-					return false;
-				}
+		const productInCard = cartProducts.find((elem) => {
+			return elem.dataset.id === products[index].dataset.id;
+		});
+		if (productInCard) {
 
+			let count = productInCard.children[1];
+			let countNew = productValue[index].textContent;
+			let newCount = ((Number(count.textContent)) + (Number(countNew))).toString();
 
-			}
-		}
-
-		if ((!cart.contains(document.querySelector('.cart__product'))) ||
-			((cart.contains((document.querySelector('.cart__product')))) && getElem())) {
-
+			count.textContent = newCount;
+		} else {
 			cart.insertAdjacentHTML("afterBegin",
 				"<div class='cart__product' data-id=''><img class='cart__product-image' src=''><div class='cart__product-count'></div></div>"
 			);
@@ -58,13 +55,6 @@ for (let add of productAdd) {
 			count.textContent = productValue[index].textContent;
 			cartProduct.dataset.id = products[index].dataset.id;
 			image.src = products[index].children[1].src;
-
-		} else {
-			let count = document.querySelector('.cart__product-count');
-			let countNew = productValue[index].textContent;
-			let newCount = ((Number(count.textContent)) + (Number(countNew))).toString();
-
-			count.textContent = newCount;
 		}
 
 
