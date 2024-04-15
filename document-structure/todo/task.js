@@ -17,7 +17,7 @@ tasksAdd.addEventListener('click', (elem) => {
 	let taskRemove = document.querySelector('a.task__remove');
 
 	taskRemove.addEventListener('click', () => {
-		let task = document.querySelector('.task');
-		task.remove();
+		
+		taskRemove.parentElement.remove();
 	})
 })

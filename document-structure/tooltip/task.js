@@ -4,7 +4,7 @@ let firstTootip = document.querySelector('.has-tooltip');
 
 
 firstTootip.insertAdjacentHTML("afterEnd",
-	"<div class='tooltip' style='left:0 ; top:0 '></div>"
+	"<div class='tooltip' style='left:0 ; top:0 ; right: ;''></div>"
 );
 
 
@@ -24,8 +24,8 @@ for (let i of hasTtooltips) {
 			tooltip.classList.add('tooltip_active');
 			tooltip.textContent = titleText;
 		}
-		tooltip.style.left = `${posicion.left}px`;
-		tooltip.style.top = `${posicion.top}px`;
+		tooltip.style.left = `${posicion.left + 5}px`;
+		tooltip.style.top = `${posicion.top + 20}px`;
 
 
 	})

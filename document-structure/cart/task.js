@@ -33,10 +33,9 @@ for (let add of productAdd) {
 
 		const cartProducts = Array.from(document.querySelectorAll('.cart__product'));
 
-		const productInCard = cartProducts.find((elem) => {
-			return elem.dataset.id === products[index].dataset.id;
-		});
-		if (productInCard) {
+		const productInCard = cartProducts.find((elem) =>  elem.dataset.id === products[index].dataset.id);
+		
+        if (productInCard) {
 
 			let count = productInCard.children[1];
 			let countNew = productValue[index].textContent;
