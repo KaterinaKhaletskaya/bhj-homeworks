@@ -10,11 +10,8 @@ button.addEventListener('click', (e) => {
 
 		xhr.upload.onprogress = function(event) {
 
-			if (event.loaded === event.total) {
-				progress.value = 1.0;
-			} else {
-                progress.value = event.loaded / 1000000;
-            }
+            progress.value = event.loaded / event.total;
+            
 		}
 
 		xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/upload');
